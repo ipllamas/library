@@ -1,6 +1,10 @@
-body {
+body, html {
   margin: 0;
   height: 100vh;
+}
+
+:root {
+  --modal-height: 265px;
 }
 
 .container {
@@ -33,7 +37,7 @@ body {
   text-align: center;
 }
 
-.modal {
+.modal-inactive {
   position: absolute;
   top: 0;
   left: 0;
@@ -44,17 +48,53 @@ body {
 }
 
 .modal-content {
+  background-color: white;
+  padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
-  margin: 3rem;
-  gap: 10px;
   width: 200px;
-  height: 120px;
+  height: var(--modal-height);
 
-  /* Position element in the center of the screen */
+  /* Position element in the center-ish of the screen */
   position: absolute;
   left: 50%;
   margin-left: -100px;
-  top: 50%;
-  margin-top: -60px;
+  top: 35%;
+  margin-top: calc(-1*var(--modal-height)/2);
+}
+
+.modal-content h1 {
+  text-align: center;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+.modal-content div{
+  display: flex;
+  flex-direction: column;
+}
+
+.invalid-message {
+  color: red;
+  margin: 5px;
+  visibility: hidden;
+}
+
+.invalid-message-active{
+  visibility: visible;
+}
+
+.modal-content .read-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.modal-content .read-container p {
+  margin: 5px;
+}
+
+.modal-content .add-button {
+  margin-top: 15px;
 }
