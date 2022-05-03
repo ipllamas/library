@@ -27,8 +27,10 @@ body, html {
   background-color: greenyellow;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 7rem;
-  padding: 3rem;
+  grid-auto-rows: min-content;
+  column-gap: 7rem;
+  row-gap: 5rem;
+  padding: 3rem 7rem;
 }
 
 .card {

@@ -59,7 +59,7 @@ function processAdd() {
   if(validateForm()) {
     const newBook = new Book(titleInput.value, authorInput.value, 
       pagesInput.value, readCheck.checked)
-    clearInputs
+    clearInputs();
     createCard(newBook);
   }
 }
