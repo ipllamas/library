@@ -78,7 +78,7 @@ p, h1 {
 .card {
   position: relative;
   background-color: var(--yellow);
-  height: 150px;
+  height: 160px;
   text-align: center;
 }
 
@@ -90,9 +90,41 @@ p, h1 {
   white-space: nowrap;
 }
 
+.readStatus-yes {
+  background-color: var(--blue);
+  border: 1px solid var(--blue);
+  border-radius: 30px;
+  padding: 5px 20px;
+  font-family:Verdana, Tahoma, sans-serif;
+  font-weight: bold;
+  color: white;
+}
+
+.readStatus-yes:hover {
+  background-color: white;
+  border-color: white;
+  color: var(--blue);
+}
+
+.readStatus-no {
+  background-color: red;
+  border: 1px solid red;
+  border-radius: 30px;
+  padding: 5px 20px;
+  font-family:Verdana, Tahoma, sans-serif;
+  font-weight: bold;
+  color: white;
+  }
+
+.readStatus-no:hover {
+  background-color: white;
+  border-color: white;
+  color: red;
+}
+
 .remove-btn {
   position: absolute;
-  bottom: 10px;
+  bottom: 17px;
   right: 10px;
   font-size: 20px;
   font-weight: bold;

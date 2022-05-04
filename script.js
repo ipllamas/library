@@ -100,17 +100,26 @@ function createCard(book) {
   const title = document.createElement('p');
   const author = document.createElement('p');
   const pages = document.createElement('p');
-  const readStatus = document.createElement('p');
+  const readStatus = document.createElement('button');
 
   removeBtn.textContent = '−'
   title.textContent = `${book.title}`;
   author.textContent = `${book.author}`;
-  pages.textContent = `${book.pages}`;
-  readStatus.textContent = book.complete ? 'Read' : 'Not Read'
+  pages.textContent = `${book.pages} Pages`;
+
+  if(book.complete) {
+    readStatus.textContent = 'Read';
+    readStatus.classList.add('readStatus-yes');
+  } else {
+    readStatus.textContent = 'Not Read';
+    readStatus.classList.add('readStatus-no');
+  }
 
   card.classList.add('card');
   removeBtn.classList.add('remove-btn');
+
   removeBtn.addEventListener('click',deleteCard);
+  readStatus.addEventListener('click', toggleReadStatus);
 
   card.appendChild(removeBtn);
   card.appendChild(title);
@@ -123,6 +132,11 @@ function createCard(book) {
 function deleteCard(e) {
   const selectedCard = e.target.parentNode;
   selectedCard.parentNode.removeChild(selectedCard);
+}
+
+function toggleReadStatus(e) {
+  e.target.classList.toggle('readStatus-yes');
+  e.target.classList.toggle('readStatus-no');
 }
 
 //Create initial sample book
