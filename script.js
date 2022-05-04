@@ -137,6 +137,11 @@ function deleteCard(e) {
 function toggleReadStatus(e) {
   e.target.classList.toggle('readStatus-yes');
   e.target.classList.toggle('readStatus-no');
+  if(e.target.classList.contains('readStatus-yes')) {
+    e.target.textContent = 'Read';
+  } else {
+    e.target.textContent = "Not Read";
+  }
 }
 
 //Create initial sample book
