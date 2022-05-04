@@ -96,18 +96,23 @@ function clearInputs() {
 
 function createCard(book) {
   const card = document.createElement('div');
+  const removeBtn = document.createElement('button');
   const title = document.createElement('p');
   const author = document.createElement('p');
   const pages = document.createElement('p');
   const readStatus = document.createElement('p');
 
+  removeBtn.textContent = '−'
   title.textContent = `${book.title}`;
   author.textContent = `${book.author}`;
   pages.textContent = `${book.pages}`;
   readStatus.textContent = book.complete ? 'Read' : 'Not Read'
 
   card.classList.add('card');
+  removeBtn.classList.add('remove-btn');
+  removeBtn.addEventListener('click',deleteCard);
 
+  card.appendChild(removeBtn);
   card.appendChild(title);
   card.appendChild(author);
   card.appendChild(pages);
@@ -115,3 +120,11 @@ function createCard(book) {
   main.appendChild(card);
 }
 
+function deleteCard(e) {
+  const selectedCard = e.target.parentNode;
+  selectedCard.parentNode.removeChild(selectedCard);
+}
+
+//Create initial sample book
+const gatsby = new Book('The Great Gatsby', 'F. Scott Fitzgerald', 208, true);
+createCard(gatsby);
